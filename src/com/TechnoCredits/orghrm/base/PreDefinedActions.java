@@ -31,11 +31,11 @@ public class PreDefinedActions {
 		driver.manage().window().maximize();
 	}
 
-	public void close() {
+	public static void close() {
 		driver.close();
 	}
 
-	public void quit() {
+	public static void quit() {
 		driver.quit();
 	}
 }

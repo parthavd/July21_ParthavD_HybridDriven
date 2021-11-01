@@ -1,36 +1,32 @@
 package com.TechnoCredits.orghrm.testscripts;
 
-import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.TechnoCredits.orghrm.base.PreDefinedActions;
 import com.TechnoCredits.orghrm.pages.LoginPage;
+import com.TechnoCredits.orghrm.pages.MenuPage;
 
-public class LoginPageTest {
-
+public class MenuPageTest {
+	
 	@BeforeClass
 	public void start() {
-
 		PreDefinedActions.start();
 	}
-
+	
 	@Test
-	public void checkSuccessfulLogin() {
-
+	public void checkNavigation_PIM_AddEmp() {
+		
 		LoginPage loginPage = new LoginPage();
 		loginPage.setUserName("admin").setPassword("@t9maHZGO1").clickLogin();
-		String expectedText = "Dashboard";
-		String actualText = loginPage.validateLogin();
-		Assert.assertEquals(expectedText, actualText);
+		MenuPage menuPage = new MenuPage();
+		menuPage.navigateTo("PIM-Add Employee");
 	}
 	
-	@AfterClass
+	
 	public void close() {
-
 		PreDefinedActions.close();
-
 	}
 
 }

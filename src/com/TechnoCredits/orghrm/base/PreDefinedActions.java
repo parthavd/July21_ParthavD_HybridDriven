@@ -4,10 +4,12 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class PreDefinedActions {
 
 	protected static WebDriver driver;
+	protected WebDriverWait wait = new WebDriverWait(driver, 30);
 
 	public static void start() {
 
@@ -18,6 +20,7 @@ public class PreDefinedActions {
 		System.out.println("STEP:  Launch the Org HRM website");
 		driver.get("https://kdani-trials72.orangehrmlive.com/auth/login");
 		driver.manage().window().maximize();
+		WebDriverWait wait = new WebDriverWait(driver, 30);
 	}
 
 	public void start(String url) {
